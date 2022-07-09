@@ -138,7 +138,7 @@ else:
     get_sensor_data()
 
 date = datetime.datetime.now()
-date = f"{date.strftime('%y')}-{date.strftime('%m')-{date.strftime('%d')}} {date.strftime('%H')}:{date.strftime('%M')}"
+date = f"{date.strftime('%y')}-{date.strftime('%m')}-{date.strftime('%d')} {date.strftime('%H')}:{date.strftime('%M')}"
 data = "            <tr><td>%s</td><td>%.1f</td><td>%.0f</td></tr>\n" % (
     date,
     cTemp,
