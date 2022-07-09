@@ -12,32 +12,32 @@ data = bus.read_i2c_block_data(0x77, 0xAA, 22)
 
 # Convert the data
 AC1 = data[0] * 256 + data[1]
-if AC1 > 32767 :
-	AC1 -= 65535
+if AC1 > 32767:
+    AC1 -= 65535
 AC2 = data[2] * 256 + data[3]
-if AC2 > 32767 :
-	AC2 -= 65535
+if AC2 > 32767:
+    AC2 -= 65535
 AC3 = data[4] * 256 + data[5]
-if AC3 > 32767 :
-	AC3 -= 65535
+if AC3 > 32767:
+    AC3 -= 65535
 AC4 = data[6] * 256 + data[7]
 AC5 = data[8] * 256 + data[9]
 AC6 = data[10] * 256 + data[11]
 B1 = data[12] * 256 + data[13]
-if B1 > 32767 :
-	B1 -= 65535
+if B1 > 32767:
+    B1 -= 65535
 B2 = data[14] * 256 + data[15]
-if B2 > 32767 :
-	B2 -= 65535
+if B2 > 32767:
+    B2 -= 65535
 MB = data[16] * 256 + data[17]
-if MB > 32767 :
-	MB -= 65535
+if MB > 32767:
+    MB -= 65535
 MC = data[18] * 256 + data[19]
-if MC > 32767 :
-	MC -= 65535
+if MC > 32767:
+    MC -= 65535
 MD = data[20] * 256 + data[21]
-if MD > 32767 :
-	MD -= 65535
+if MD > 32767:
+    MD -= 65535
 
 time.sleep(0.5)
 
@@ -73,12 +73,12 @@ X1 = AC3 * B6 / 8192.0
 X2 = (B1 * (B6 * B6 / 2048.0)) / 65536.0
 X3 = ((X1 + X2) + 2) / 4.0
 B4 = AC4 * (X3 + 32768) / 32768.0
-B7 = ((pres - B3) * (25000.0))
+B7 = (pres - B3) * (25000.0)
 pressure = 0.0
-if B7 < 2147483648 :
-	pressure = (B7 * 2) / B4
-else :
-	pressure = (B7 / B4) * 2
+if B7 < 2147483648:
+    pressure = (B7 * 2) / B4
+else:
+    pressure = (B7 / B4) * 2
 X1 = (pressure / 256.0) * (pressure / 256.0)
 X1 = (X1 * 3038.0) / 65536.0
 X2 = ((-7357) * pressure) / 65536.0
@@ -88,17 +88,18 @@ pressure = (pressure + (X1 + X2 + 3791) / 16.0) / 100
 altitude = 44330 * (1 - ((pressure / 1013.25) ** 0.1903))
 
 # Output data to screen
-#print("Altitude : %.2f m" %altitude)
-#print("Pressure : %.2f hPa " %pressure)
-#print("Temperature in Celsius : %.2f C" %cTemp)
+# print("Altitude : %.2f m" %altitude)
+# print("Pressure : %.2f hPa " %pressure)
+# print("Temperature in Celsius : %.2f C" %cTemp)
 
 
 # prepend line
-#with open("temperature.log", "r+") as file:
+# with open("temperature.log", "r+") as file:
 #    content = file.readlines()
 #    content.insert(0, data + "\n")
 #    file.seek(0)
 #    file.writelines(content)
+
 
 def insert_text_to_line_in_file(text, line, file_path):
     with open(file_path, "r") as f:
@@ -110,10 +111,13 @@ def insert_text_to_line_in_file(text, line, file_path):
         content = "".join(content)
         f.write(content)
 
+
 date = datetime.datetime.now()
 date = f"{date.strftime('%d')}:{date.strftime('%m')}:{date.strftime('%y')} {date.strftime('%H')}:{date.strftime('%M')}"
-data = "<tr><td>%s</td><td>%.1f</td><td>%.0f</td></tr>\n" %(date,cTemp,pressure)
+data = "<tr><td>%s</td><td>%.1f</td><td>%.0f</td></tr>\n" % (date, cTemp, pressure)
 
 print(data)
 
-insert_text_to_line_in_file(text=data, line=17, file_path=os.path.dirname(__file__) + "/index.html")
+insert_text_to_line_in_file(
+    text=data, line=22, file_path=os.path.dirname(__file__) + "/index.html"
+)
