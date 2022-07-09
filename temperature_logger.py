@@ -8,6 +8,8 @@ import sys
 import time
 
 args = list(map(lambda arg: arg.lower(), sys.argv))
+cTemp = 0 
+pressure = 0
 
 
 def get_fake_data():
@@ -18,6 +20,9 @@ def get_fake_data():
 
 
 def get_sensor_data():
+    global cTemp
+    global pressure
+
     bus = smbus.SMBus(1)
 
     # BMP180 address, 0x77
