@@ -114,13 +114,10 @@ def insert_text_to_line_in_file(insert_text, insert_marker, file_path):
         # content.insert(index_marker + 1, text)
         # content = "".join(content)
 
-        i = 0
-        for line in content:
-            if insert_marker in line:
+        for i in range(len(content)):
+            if insert_marker in content[i]:
                 content.insert(i + 1, insert_text)
                 break
-            else:
-                i += 1
 
         content = "".join(content)
 
