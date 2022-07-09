@@ -119,5 +119,5 @@ data = "<tr><td>%s</td><td>%.1f</td><td>%.0f</td></tr>\n" % (date, cTemp, pressu
 print(data)
 
 insert_text_to_line_in_file(
-    text=data, line=22, file_path=os.path.dirname(__file__) + "/index.html"
+    text=data, line=17, file_path=os.path.dirname(__file__) + "/index.html"
 )
