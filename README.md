@@ -1,4 +1,4 @@
-# telegram temperature bot
+# Pi Temperature Logger
 
 Repo to log temperature (meassured by *BMP180* at a raspberry pi) to html file.
 

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import smbus
 import time
 import datetime
@@ -115,4 +116,4 @@ data = "<tr><td>%s</td><td>%.1f</td><td>%.0f</td></tr>\n" %(date,cTemp,pressure)
 
 print(data)
 
-insert_text_to_line_in_file(text=data, line=17, file_path="./index.html")
+insert_text_to_line_in_file(text=data, line=17, file_path=os.path.dirname(__file__) + "/index.html")
