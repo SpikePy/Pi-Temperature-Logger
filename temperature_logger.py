@@ -8,7 +8,7 @@ import sys
 import time
 
 args = list(map(lambda arg: arg.lower(), sys.argv))
-cTemp = 0 
+cTemp = 0
 pressure = 0
 
 
@@ -106,19 +106,15 @@ def get_sensor_data():
     altitude = 44330 * (1 - ((pressure / 1013.25) ** 0.1903))
 
 
-def insert_text_to_line_in_file(text, insert_after, file_path):
-    content_new = []
+def insert_text_to_line_in_file(text, insert_marker, file_path):
+    with open(file_path, "r") as file:
+        content = file.readlines()
+        index_marker = content.index(insert_marker, 10, 50)
+        content.insert(index_marker + 1, text)
+        content = "".join(content)
 
-    file = open(file_path, "r")
-    content_original = file.readlines()
-    for line in content_original:
-        if insert_after in line:
-            line = line + text
-        content_new.append(line)
-    content_new = "".join(content_new)
-
-    file = open(file_path, "w")
-    file.write(content_new)
+    with open(file_path, "w") as file:
+        file.write(content)
 
 
 if "test" in args or "debug" in args:
@@ -139,6 +135,6 @@ print("%s | %.1f | %.0f" % (date, cTemp, pressure))
 
 insert_text_to_line_in_file(
     text=data,
-    insert_after="<!-- insert data marker -->",
+    insert_marker="            <!-- insert data marker -->\n",
     file_path=os.path.dirname(__file__) + "/index.html",
 )
