@@ -106,11 +106,22 @@ def get_sensor_data():
     altitude = 44330 * (1 - ((pressure / 1013.25) ** 0.1903))
 
 
-def insert_text_to_line_in_file(text, insert_marker, file_path):
+def insert_text_to_line_in_file(insert_text, insert_marker, file_path):
     with open(file_path, "r") as file:
         content = file.readlines()
-        index_marker = content.index(insert_marker, 10, 50)
-        content.insert(index_marker + 1, text)
+
+        # index_marker = content.index(insert_marker, 10, 50)
+        # content.insert(index_marker + 1, text)
+        # content = "".join(content)
+
+        i = 0
+        for line in content:
+            if insert_marker in line:
+                content.insert(i + 1, insert_text)
+                break
+            else:
+                i += 1
+
         content = "".join(content)
 
     with open(file_path, "w") as file:
@@ -134,7 +145,7 @@ data = "            <tr><td>%s</td><td>%.1f</td><td>%.0f</td></tr>\n" % (
 print("%s | %.1f | %.0f" % (date, cTemp, pressure))
 
 insert_text_to_line_in_file(
-    text=data,
-    insert_marker="            <!-- insert data marker -->\n",
+    insert_text=data,
+    insert_marker="insert data marker",
     file_path=os.path.dirname(__file__) + "/index.html",
 )
