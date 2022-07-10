@@ -1,0 +1,13 @@
+#!/user/bin/env bash
+
+wlans=$(sudo iw wlan0 scan)
+
+ssid=$(paste --delimiters=',' \
+  <(echo "$wlans" | grep -Pio '(?<=signal: ).*') \
+  <(echo "$wlans" | grep -Pio '(?<=ssid: ).*') \
+  | sort --numeric-sort \
+  | tail --lines=1 \
+  | cut --delimiter=',' --fields=2
+)
+
+echo "$(date),${ssid}" >> ~/ssid_history.csv
