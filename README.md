@@ -34,11 +34,9 @@ crontab -e
 Testing: Get location of Meassurement via strongest WLANs SSID
 
 ```bash
-wlans=$(sudo iw wlan0 scan)
-paste --delimiters=',' \
-  <(echo "$wlans" | grep -Pio '(?<=signal: ).*') \
-  <(echo "$wlans" | grep -Pio '(?<=ssid: ).*') \
-  | sort --numeric-sort \
-  | tail --lines=1 \
-  | cut --delimiter=',' --fields=2
+# allow user to run iw command without password
+echo "${USER} ALL=(ALL) NOPASSWD: /sbin/iw wlan0 scan" > "/etc/sudoers.d/sudo-${USER}-nopasswd-iw"
+
+# create crontab with:
+# */15 * * * *  ~/temperature_logger/get_ssid
 ```
