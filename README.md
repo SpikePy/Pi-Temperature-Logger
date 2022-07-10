@@ -30,3 +30,15 @@ crontab -e
 # 55 * * * * sh -c 'cd ~/temperature_logger && git pull'
 # 0 * * * *  sh -c 'cd ~/temperature_logger && git commit -am "commit new data" && git push'
 ```
+
+Testing: Get location of Meassurement via strongest WLANs SSID
+
+```bash
+wlans=$(sudo iw wlan0 scan)
+paste --delimiters=',' \
+  <(echo "$wlans" | grep -Pio '(?<=signal: ).*') \
+  <(echo "$wlans" | grep -Pio '(?<=ssid: ).*') \
+  | sort --numeric-sort \
+  | tail --lines=1 \
+  | cut --delimiter=',' --fields=2
+```
