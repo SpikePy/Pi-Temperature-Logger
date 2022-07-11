@@ -1,4 +1,4 @@
-#!/user/bin/env bash
+#!/usr/bin/env bash
 
 wlans=$(sudo iw wlan0 scan)
 
