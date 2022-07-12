@@ -1,24 +1,28 @@
-* {
+html {
     font-family: sans-serif;
+    background: #353535;
+    background-attachment: fixed;
+    background-image: url("background.png");
+    color: #eee;
 }
 
 h1 {
     text-align: center;
+    margin: 1em;
 }
 
 table {
+    border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
-    border-collapse: collapse;
 }
 
 th {
-    background-color: #e3e3e3;
+    background-color: #0005;
 }
 
 tr:nth-child(odd) {
-    background-color: #f5f5f5;
+    background-color: #0003;
 }
 
 td,
