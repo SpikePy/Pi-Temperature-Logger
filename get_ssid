@@ -10,4 +10,4 @@ ssid=$(paste --delimiters=',' \
   | cut --delimiter=',' --fields=2
 )
 
-echo "$(date),${ssid}" >> ~/ssid_history.csv
+echo "$(date +'%Y-%m-%d %H:%M'),${ssid}" >> ~/ssid_history.csv
