@@ -3,7 +3,7 @@ html {
     color: #eee;
 
     background: #222;
-    /* background-image: url("background.png"); */
+    /* background-image: url("images/background.png"); */
 
     background-image: radial-gradient(#111 20%, transparent 25%);
     background-size: 16px 16px;
