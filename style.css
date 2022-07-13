@@ -1,24 +1,32 @@
-* {
+html {
     font-family: sans-serif;
+    color: #eee;
+
+    background: #222;
+    /* background-image: url("background.png"); */
+
+    background-image: radial-gradient(#111 20%, transparent 25%);
+    background-size: 16px 16px;
 }
 
 h1 {
     text-align: center;
+    margin: 1em;
+    text-shadow: 3px 3px 2px #000;
 }
 
 table {
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
     border-collapse: collapse;
 }
 
 th {
-    background-color: #e3e3e3;
+    background-color: #0005;
 }
 
 tr:nth-child(odd) {
-    background-color: #f5f5f5;
+    background-color: #0004;
 }
 
 td,
