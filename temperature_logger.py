@@ -139,7 +139,7 @@ else:
 
 date = datetime.datetime.now()
 date = f"{date.strftime('%y')}-{date.strftime('%m')}-{date.strftime('%d')} {date.strftime('%H')}:{date.strftime('%M')}"
-data = "            <tr><td>%s</td><td>%.1f °C</td><td>%.0f hPa</td></tr>\n" % (
+data = '    ["%s", %.1f, %.0f],\n' % (
     date,
     cTemp,
     pressure,
@@ -149,6 +149,6 @@ print("%s | %.1f | %.0f" % (date, cTemp, pressure))
 
 insert_text_to_line_in_file(
     insert_text=data,
-    insert_marker="insert data marker",
-    file_path=os.path.dirname(__file__) + "/index.html",
+    insert_marker="const data",
+    file_path=os.path.dirname(__file__) + "/data.js",
 )
