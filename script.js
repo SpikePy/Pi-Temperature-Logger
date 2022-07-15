@@ -1,5 +1,5 @@
 function table_content(item) {
-    table += `<tr><td>${item[0]}</td><td>${item[1]} °C</td><td>${item[2]} hPa</td></tr>`
+    table += `<tr><td>${item[0]}</td><td>${item[1].toFixed(1)} °C</td><td>${item[2].toFixed(0)} hPa</td></tr>`
 }
 
 function generate_table() {
