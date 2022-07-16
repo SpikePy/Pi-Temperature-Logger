@@ -29,6 +29,7 @@ table {
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
+    background-color: #0002;
 }
 
 th {
@@ -47,4 +48,17 @@ th {
 td:nth-child(2),
 td:nth-child(3) {
     text-align: right;
+}
+
+ul {
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    list-style-type: none;
+    display: flex;
+}
+
+button {
+    width: 8em;
+    margin: .7em;
 }
