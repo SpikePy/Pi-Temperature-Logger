@@ -1,6 +1,6 @@
 # Pi Temperature Logger
 
-Repo to log temperature (meassured by *BMP180* at a raspberry pi) to html file.
+Repo to log temperature (meassured by *BMP180* at a raspberry pi) to html file and [publish it publicly](https://spikepy.github.io/Pi-Temperature-Logger).
 
 ## Connecting the Sensor to Raspberry Pi GPIO
 
