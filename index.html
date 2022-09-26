@@ -9,16 +9,27 @@
     <link rel="icon" type="image/svg" href="images/favicon.svg">
     <link rel="stylesheet" href="style.css">
     <script src="data.js"></script>
-    <script src="script.js"></script>
 </head>
 
 <body onload="generate_table(measurements_past_day)">
     <h1>Pi Temperature Logger</h1>
-    <ul>
-        <li> <button onclick="generate_table(measurements_past_day)">past day</button> </li>
-        <li> <button onclick="generate_table(measurements_past_week)">past week</button> </li>
-        <li> <button onclick="generate_table(data.length)">all</button> </li>
-    </ul>
-    <table>
-    </table>
+    <h2>Day</h2>
+    <div class="digram">
+        <img src="diagram_day.svg" alt="temperature digram of last day">
+    </div>
+
+    <h2>Week</h2>
+    <div class="digram">
+        <img src="diagram_week.svg" alt="temperature digram of last week">
+    </div>
+
+    <h2>Month</h2>
+    <div class="digram">
+        <img src="diagram_month.svg" alt="temperature digram of last month">
+    </div>
+
+    <h2>All</h2>
+    <div class="digram">
+        <img src="diagram_all.svg" alt="diagram of all stored temperature data">
+    </div>
 </body>

@@ -29,7 +29,7 @@ set timefmt "%y-%m-%d_%H:%M"  # specify our time string format
 set format x "%y-%m-%d" # otherwise it will show only MM:SS
 set xdata time # tells gnuplot the x axis is time data
 set xrange [* : *] reverse 
-set xtics rotate by -45
+set xtics rotate by -90
 
 set term svg size 2000,700
 
