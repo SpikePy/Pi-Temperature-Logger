@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-meassurements_per_hour=4
+meassurements_per_hour=12 # depends on how the cronjob is configured
 meassurements_per_day=$(( meassurements_per_hour * 24 ))
 meassurements_per_week=$(( meassurements_per_day * 7 ))
 meassurements_per_month=$(( meassurements_per_day * 30 ))
