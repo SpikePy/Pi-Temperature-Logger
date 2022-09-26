@@ -21,7 +21,7 @@ set datafile separator ','
 set grid ls 1 lw .25 lc black xtics ytics
 
 set ylabel "Temperature [°C]"
-set yrange [10:35]
+set yrange [10:34]
 set ytics 0,2,35
 
 set xlabel "Date"

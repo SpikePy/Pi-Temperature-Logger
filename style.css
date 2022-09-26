@@ -64,5 +64,6 @@ button {
 }
 
 .digram {
+    display: inline-block;
     background-color: #fff;
 }
