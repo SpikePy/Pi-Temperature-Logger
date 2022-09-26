@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-meassurements_per_hour=4
+meassurements_per_hour=12 # depends on how the cronjob is configured
 meassurements_per_day=$(( meassurements_per_hour * 24 ))
 meassurements_per_week=$(( meassurements_per_day * 7 ))
 meassurements_per_month=$(( meassurements_per_day * 30 ))
@@ -21,7 +21,7 @@ set datafile separator ','
 set grid ls 1 lw .25 lc black xtics ytics
 
 set ylabel "Temperature [°C]"
-set yrange [10:35]
+set yrange [10:34]
 set ytics 0,2,35
 
 set xlabel "Date"
