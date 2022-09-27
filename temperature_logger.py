@@ -105,32 +105,6 @@ def get_sensor_data():
     # Calculate Altitude
     altitude = 44330 * (1 - ((pressure / 1013.25) ** 0.1903))
 
-
-def insert_text_to_line_in_file(insert_text, insert_marker, file_path):
-    with open(file_path, "r") as file:
-        # store each line of the file as an element of a list
-        content = file.readlines()
-
-        # alternative approach
-        # index_marker = content.index(insert_marker, 10, 50)
-        # content.insert(index_marker + 1, text)
-        # content = "".join(content)
-
-        # go through lines by index
-        for i in range(len(content)):
-
-            # if the current line containins the defined marker insert text and exit loop
-            if insert_marker in content[i]:
-                content.insert(i + 1, insert_text)
-                break
-
-        # combine list of lines to one multiline string
-        content = "".join(content)
-
-    with open(file_path, "w") as file:
-        file.write(content)
-
-
 if "test" in args or "debug" in args:
     print("[test mode]")
     get_fake_data()
@@ -148,6 +122,6 @@ data = '%s,%.1f,%.0f\n' % (
 
 print("%s | %.1f | %.0f" % (date, cTemp, pressure))
 
-#f=open(file_path=os.path.dirname(__file__) + "/data.csv", "a+")
-f = open("data.csv", "a+")
+file_data = file_path=os.path.dirname(__file__) + "/data.csv"
+f = open(file_data, "a+")
 f.write(data)
