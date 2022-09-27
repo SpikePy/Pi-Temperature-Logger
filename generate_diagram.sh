@@ -29,7 +29,7 @@ set xtics rotate by -90
 set term svg size 2000,700
 
 set output "diagram_all.svg"
-plot "data_all.csv" using 1:2 with lines lw 2 lc 2
+plot "data.csv" using 1:2 with lines lw 2 lc 2
 
 set output "diagram_month.svg"
 plot "data_month.csv" using 1:2 with lines lw 2 lc 2
