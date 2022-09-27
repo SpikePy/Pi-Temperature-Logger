@@ -139,7 +139,8 @@ else:
 
 date = datetime.datetime.now()
 date = f"{date.strftime('%y')}-{date.strftime('%m')}-{date.strftime('%d')}_{date.strftime('%H')}:{date.strftime('%M')}"
-data = '    ["%s", %.1f, %.0f],\n' % (
+
+data = '%s,%.1f,%.0f\n' % (
     date,
     cTemp,
     pressure,
@@ -150,5 +151,5 @@ print("%s | %.1f | %.0f" % (date, cTemp, pressure))
 insert_text_to_line_in_file(
     insert_text=data,
     insert_marker="const data",
-    file_path=os.path.dirname(__file__) + "/data.js",
+    file_path=os.path.dirname(__file__) + "/data.csv",
 )

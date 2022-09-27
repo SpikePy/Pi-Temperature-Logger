@@ -1,10 +1,7 @@
 #!/usr/bin/env sh
 
-# transform data from JavaScript Object Literale to CSV
-tail -n +2 data.js | tr -d '"[] ;' | cut -d',' -f1,2  > data_all.csv
-
 # generate slices of data
-cat data_all.csv   | sed -n "1,/$(date --date='month ago' +'%y-%m-%d_%H:00')/p" > data_month.csv
+cat data.csv       | sed -n "1,/$(date --date='month ago' +'%y-%m-%d_%H:00')/p" > data_month.csv
 cat data_month.csv | sed -n "1,/$(date --date='week ago'  +'%y-%m-%d_%H:00')/p" > data_week.csv
 cat data_week.csv  | sed -n "1,/$(date --date='yesterday' +'%y-%m-%d_%H:00')/p" > data_day.csv
 
@@ -32,7 +29,7 @@ set xtics rotate by -90
 set term svg size 2000,700
 
 set output "diagram_all.svg"
-plot "data_all.csv" using 1:2 with lines lw 2 lc 2
+plot "data.csv" using 1:2 with lines lw 2 lc 2
 
 set output "diagram_month.svg"
 plot "data_month.csv" using 1:2 with lines lw 2 lc 2
