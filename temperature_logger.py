@@ -148,8 +148,6 @@ data = '%s,%.1f,%.0f\n' % (
 
 print("%s | %.1f | %.0f" % (date, cTemp, pressure))
 
-insert_text_to_line_in_file(
-    insert_text=data,
-    insert_marker="const data",
-    file_path=os.path.dirname(__file__) + "/data.csv",
-)
+#f=open(file_path=os.path.dirname(__file__) + "/data.csv", "a+")
+f = open("data.csv", "a+")
+f.write(data)
