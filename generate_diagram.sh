@@ -6,7 +6,7 @@ cat data_month.csv | sed -n "1,/$(date --date='week ago'  +'%y-%m-%d_%H:00')/p" 
 cat data_week.csv  | sed -n "1,/$(date --date='yesterday' +'%y-%m-%d_%H:00')/p" > data_day.csv
 
 gnuplot << 'EOF'
-set title "Temperature Log" 
+set title "Temperature Log"
 
 # disable legend
 set nokey
@@ -23,13 +23,13 @@ set xlabel "Date"
 set timefmt "%y-%m-%d_%H:%M"  # specify our time string format
 set format x "%y-%m-%d" # otherwise it will show only MM:SS
 set xdata time # tells gnuplot the x axis is time data
-set xrange [* : *] reverse 
+set xrange [* : *] reverse
 set xtics rotate by -90
 
 set term svg size 2000,700
 
 set output "diagram_all.svg"
-plot "data_all.csv" using 1:2 with lines lw 2 lc 2
+plot "data.csv" using 1:2 with lines lw 2 lc 2
 
 set output "diagram_month.svg"
 plot "data_month.csv" using 1:2 with lines lw 2 lc 2
