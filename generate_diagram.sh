@@ -28,17 +28,19 @@ set xtics rotate by -90
 
 set term svg size 2000,700
 
+set format x "%y-%m-%d %A"
 set output "diagram_all.svg"
 plot "data.csv" using 1:2 with lines lw 2 lc 2
 
+set format x "%y-%m-%d %A"
 set output "diagram_month.svg"
 plot "data_month.csv" using 1:2 with lines lw 2 lc 2
 
-set format x "%y-%m-%d %A"
+set format x "%A"
 set output "diagram_week.svg"
-plot "data_week.csv" using 1:2 with lines lw 2 lc 2
+plot "data_week.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
 
-set format x "%y-%m-%d %A %H:%M"
+set format x "%A %H:%M"
 set output "diagram_day.svg"
 plot "data_day.csv" using 1:2 with lines lw 2 lc 2
 EOF

@@ -22,9 +22,9 @@ sudo apt install --yes \
 
 sudo raspi-config # interface options/i2c/yes
 
-sudo usermod -a -G i2c rho
+sudo usermod -a -G i2c $(whoami)
 
-crontab -e 
+crontab -e
 # add the following commands:
 # * * * * *  ~/temperature_logger/temperature_logger.py
 # 55 * * * * sh -c 'cd ~/temperature_logger && git pull'
