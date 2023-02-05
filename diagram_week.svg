@@ -353,6 +353,18 @@
 </g>
 	<g id="gnuplot_plot_1" ><title>"data_week.csv" using 1:2</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+	<use xlink:href='#gpPt6' transform='translate(233.31,399.08) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(234.14,399.08) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(234.97,399.08) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(235.80,399.08) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(236.63,399.08) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(237.46,399.08) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(238.29,399.08) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(239.12,396.87) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(239.95,396.87) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(240.78,394.66) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(241.61,394.66) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(242.44,394.66) scale(0.90)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(243.27,396.87) scale(0.90)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(244.10,394.66) scale(0.90)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(244.92,394.66) scale(0.90)' color='rgb(  0, 158, 115)'/>
@@ -2358,18 +2370,6 @@
 	<use xlink:href='#gpPt6' transform='translate(1903.50,456.59) scale(0.90)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(1904.33,456.59) scale(0.90)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(1905.16,456.59) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1905.99,456.59) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1906.82,456.59) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1907.65,454.38) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1908.48,456.59) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1909.31,454.38) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1910.14,454.38) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1910.96,456.59) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1911.79,454.38) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1912.62,452.17) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1913.45,452.17) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1914.28,454.38) scale(0.90)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(1915.11,452.17) scale(0.90)' color='rgb(  0, 158, 115)'/>
 </g>
 	</g>
 <g fill="none" color="white" stroke="rgb(  0, 158, 115)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
