@@ -6,8 +6,6 @@ cat data_month.csv | sed -n "1,/$(date --date='week ago'  +'%y-%m-%d_%H:00')/p" 
 cat data_week.csv  | sed -n "1,/$(date --date='yesterday' +'%y-%m-%d_%H:00')/p" > data_day.csv
 
 gnuplot << 'EOF'
-set title "Temperature Log"
-
 # disable legend
 set nokey
 
@@ -28,19 +26,23 @@ set xtics rotate by -90
 
 set term svg size 2000,700
 
+set title "Pi Temperature Logger - All"
 set format x "%y-%m-%d %A"
-set output "diagram_all.svg"
+set output "images/diagrams/all.svg"
 plot "data.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
 
+set title "Pi Temperature Logger - Month"
 set format x "%y-%m-%d %A"
-set output "diagram_month.svg"
+set output "images/diagrams/month.svg"
 plot "data_month.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
 
+set title "Pi Temperature Logger - Week"
 set format x "%A"
-set output "diagram_week.svg"
+set output "images/diagrams/week.svg"
 plot "data_week.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
 
+set title "Pi Temperature Logger - Day"
 set format x "%A %H:%M"
-set output "diagram_day.svg"
+set output "images/diagrams/day.svg"
 plot "data_day.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
 EOF
