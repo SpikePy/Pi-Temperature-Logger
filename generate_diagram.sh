@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
 # generate slices of data
-tac data.csv       | sed -n "1,/$(date --date='month ago' +'%y-%m-%d_%H:00')/p" > data_month.csv
-cat data_month.csv | sed -n "1,/$(date --date='week ago'  +'%y-%m-%d_%H:00')/p" > data_week.csv
-cat data_week.csv  | sed -n "1,/$(date --date='yesterday' +'%y-%m-%d_%H:00')/p" > data_day.csv
+tac data.csv       | sed -n "1,/$(date --date='month ago' +'%y-%m-%d_00:00')/p" > data_month.csv
+cat data_month.csv | sed -n "1,/$(date --date='week ago'  +'%y-%m-%d_00:00')/p" > data_week.csv
+cat data_week.csv  | sed -n "1,/$(date --date='yesterday' +'%y-%m-%d_00:00')/p" > data_day.csv
 
 gnuplot << 'EOF'
 # disable legend
