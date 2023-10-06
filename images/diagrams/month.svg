@@ -337,6 +337,18 @@
 </g>
 	<g id="gnuplot_plot_1" ><title>"data_month.csv" using 1:2</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
+	<use xlink:href='#gpPt6' transform='translate(301.08,280.09) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(301.24,280.09) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(301.40,280.09) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(301.55,280.09) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(301.71,283.96) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(301.87,283.96) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(302.03,285.89) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(302.19,283.96) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(302.34,285.89) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(302.50,285.89) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(302.66,285.89) scale(0.90)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(302.82,283.96) scale(0.90)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(302.98,283.96) scale(0.90)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(303.13,285.89) scale(0.90)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(303.29,283.96) scale(0.90)' color='rgb(  0, 158, 115)'/>
