@@ -30,25 +30,25 @@ set term svg size 2000,700
 set title "Pi Temperature Logger - All"
 set format x "%d.%m.%y" # otherwise it will show only MM:SS
 set output "images/diagrams/all.svg"
-plot "data_all.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
+plot "data_all.csv" using 1:2 with linespoints pointtype 7 pointsize .2 linecolor 2
 
 set title "Pi Temperature Logger - Year"
 set format x "%d.%m.%y" # otherwise it will show only MM:SS
 set output "images/diagrams/year.svg"
-plot "data_year.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
+plot "data_year.csv" using 1:2 with linespoints pointtype 7 pointsize .2 linecolor 2
 
 set title "Pi Temperature Logger - Month"
 set format x "%d.%m.%y" # otherwise it will show only MM:SS
 set output "images/diagrams/month.svg"
-plot "data_month.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
+plot "data_month.csv" using 1:2 with linespoints pointtype 7 pointsize .2 linecolor 2
 
 set title "Pi Temperature Logger - Week"
 set format x "%A"
 set output "images/diagrams/week.svg"
-plot "data_week.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
+plot "data_week.csv" using 1:2 with linespoints pointtype 7 pointsize .2 linecolor 2
 
 set title "Pi Temperature Logger - Day"
 set format x "%H:%M"
 set output "images/diagrams/day.svg"
-plot "data_day.csv" using 1:2 with points pointtype 7 pointsize .2 linecolor 2
+plot "data_day.csv" using 1:2 with linespoints pointtype 7 pointsize .2 linecolor 2
 EOF
