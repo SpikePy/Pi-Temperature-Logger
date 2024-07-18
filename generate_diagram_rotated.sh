@@ -23,8 +23,6 @@ set xtics 0,2,35
 set ylabel "Date"
 set timefmt "%y-%m-%d_%H:%M"  # specify our time string format
 set ydata time # tells gnuplot the x axis is time data
-set yrange [* : *] reverse
-#set ytics rotate by -90
 
 set term svg size 800,3000
 
