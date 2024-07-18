@@ -22,23 +22,23 @@ set ytics 0,2,35
 set xlabel "Date"
 set timefmt "%y-%m-%d_%H:%M"  # specify our time string format
 set xdata time # tells gnuplot the x axis is time data
-set xrange [* : *] reverse
+#set xrange [* : *] reverse
 set xtics rotate by -90
 
 set term svg size 2000,700
 
 set title "Pi Temperature Logger - All"
-set format x "%d.%m.%y" # otherwise it will show only MM:SS
+set format x "%d.%m.%Y" # otherwise it will show only MM:SS
 set output "images/diagrams/all.svg"
 plot "data_all.csv" using 1:2 with linespoints pointtype 7 pointsize .2 linecolor 2
 
 set title "Pi Temperature Logger - Year"
-set format x "%d.%m.%y" # otherwise it will show only MM:SS
+set format x "%d.%m.%Y" # otherwise it will show only MM:SS
 set output "images/diagrams/year.svg"
 plot "data_year.csv" using 1:2 with linespoints pointtype 7 pointsize .2 linecolor 2
 
 set title "Pi Temperature Logger - Month"
-set format x "%d.%m.%y" # otherwise it will show only MM:SS
+set format x "%d.%m.%Y" # otherwise it will show only MM:SS
 set output "images/diagrams/month.svg"
 plot "data_month.csv" using 1:2 with linespoints pointtype 7 pointsize .2 linecolor 2
 
