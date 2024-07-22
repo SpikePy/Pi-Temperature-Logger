@@ -16,7 +16,7 @@ set datafile separator ','
 set grid ls 1 lw .25 lc black xtics ytics
 
 set ylabel "Temperature [°C]"
-set yrange [15:32]
+set yrange [12:32]
 set ytics 0,1,35
 
 set xlabel "Date"
@@ -25,7 +25,7 @@ set xdata time # tells gnuplot the x axis is time data
 #set xrange [* : *] reverse
 set xtics rotate by -90
 
-set term svg size 2000,700
+set term svg size 2000,600
 
 set title "Pi Temperature Logger - All"
 set format x "%d.%m.%Y" # otherwise it will show only MM:SS
