@@ -1,24 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<meta charset="utf-8" />
 
-<head>
-    <title>Pi Temperature Logger</title>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-    <meta http-equiv="Refresh" content="600">
-    <link rel="icon" type="image/svg" href="images/favicon.svg">
-    <link rel="stylesheet" href="style.css">
-</head>
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
 
-<body>
-    <h1>Pi Temperature Logger</h1>
-    <div class="link-list">
-        <ul>
-            <li><a href="images/diagrams/day.svg">Day</a></li>
-            <li><a href="images/diagrams/week.svg">Week</a></li>
-            <li><a href="images/diagrams/month.svg">Month</a></li>
-            <li><a href="images/diagrams/year.svg">Year</a></li>
-            <li><a href="images/diagrams/all.svg">All</a></li>
-        </ul>
-    </div>
-</body>
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<!-- Circle are black when hovered-->
+<style>
+    .myCircle:hover {
+        stroke: black;
+    }
+</style>
+
+<script>
+    // set the dimensions and margins of the graph
+    var margin = { top: 10, right: 30, bottom: 30, left: 60 },
+        width = 5000 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    var svg = d3
+        .select("#my_dataviz")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    //Read the data
+    d3.csv(
+        "https://raw.githubusercontent.com/SpikePy/Pi-Temperature-Logger/d3.js/testdata.csv",
+
+        // When reading the csv, I must format variables:
+        function (d) {
+            return {
+                date: d3.timeParse("%Y-%m-%d_%H:%M")(d.date),
+                value: d.value,
+            };
+        },
+
+        // Now I can use this dataset:
+        function (data) {
+            // Add X axis --> it is a date format
+            const x = d3
+                .scaleTime()
+                .domain(d3.extent(data, (d) => d.date))
+                .nice()
+                .range([0, width]);
+            svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x));
+
+            // Add Y axis
+            const y = d3.scaleLinear().domain([12, 32]).range([height, 0]);
+            svg.append("g").call(d3.axisLeft(y));
+
+            // Add the line
+            svg.append("path")
+                .datum(data)
+                .attr("fill", "none")
+                .attr("stroke", "black")
+                .attr("stroke-width", 1)
+                .attr(
+                    "d",
+                    d3
+                        .line()
+                        .x(function (d) {
+                            return x(d.date);
+                        })
+                        .y(function (d) {
+                            return y(d.value);
+                        }),
+                );
+
+            // create a tooltip
+            var Tooltip = d3
+                .select("#my_dataviz")
+                .append("div")
+                .style("opacity", 0)
+                .attr("class", "tooltip")
+                .style("background-color", "white")
+                .style("border", "solid")
+                .style("border-width", "2px")
+                .style("border-radius", "5px")
+                .style("padding", "5px");
+
+            // Three function that change the tooltip when user hover / move / leave a cell
+            var mouseover = function (d) {
+                Tooltip.style("opacity", 1);
+            };
+            var mousemove = function (d) {
+                Tooltip.html("Exact value: " + d.value)
+                    .style("left", d3.mouse(this)[0] + 70 + "px")
+                    .style("top", d3.mouse(this)[1] + "px");
+            };
+            var mouseleave = function (d) {
+                Tooltip.style("opacity", 0);
+            };
+
+            // Add the points
+            svg.append("g")
+                .selectAll("dot")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("class", "myCircle")
+                .attr("cx", function (d) {
+                    return x(d.date);
+                })
+                .attr("cy", function (d) {
+                    return y(d.value);
+                })
+                .attr("r", 1)
+                .attr("stroke", "#69b3a2")
+                .attr("stroke-width", 3)
+                .attr("fill", "white")
+                .on("mouseover", mouseover)
+                .on("mousemove", mousemove)
+                .on("mouseleave", mouseleave);
+        },
+    );
+</script>
