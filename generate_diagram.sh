@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 # generate slices of data
-tac data.csv                                                           | sed -n '0~48p' > data_all.csv
-tac data.csv | sed -n "1,/$(date --date='year ago'  +'%y-%m-%d_00')/p" | sed -n '0~48p' > data_year.csv
-tac data.csv | sed -n "1,/$(date --date='month ago' +'%y-%m-%d_00')/p" | sed -n '0~24p' > data_month.csv
-tac data.csv | sed -n "1,/$(date --date='-7days'    +'%y-%m-%d_00')/p" | sed -n '0~6p'  > data_week.csv
-tac data.csv | sed -n "1,/$(date --date='-1day'     +'%y-%m-%d_%H')/p"                  > data_day.csv
+cat data.csv                                                           | sed -n '0~48p' > data_all.csv
+cat data.csv | sed -n "1,/$(date --date='year ago'  +'%y-%m-%d_00')/p" | sed -n '0~48p' > data_year.csv
+cat data.csv | sed -n "1,/$(date --date='month ago' +'%y-%m-%d_00')/p" | sed -n '0~24p' > data_month.csv
+cat data.csv | sed -n "1,/$(date --date='-7days'    +'%y-%m-%d_00')/p" | sed -n '0~6p'  > data_week.csv
+cat data.csv | sed -n "1,/$(date --date='-1day'     +'%y-%m-%d_%H')/p"                  > data_day.csv
 
 gnuplot << 'EOF'
 # disable legend
@@ -22,7 +22,7 @@ set ytics 0,1,35
 set xlabel "Date"
 set timefmt "%y-%m-%d_%H:%M"  # specify our time string format
 set xdata time # tells gnuplot the x axis is time data
-#set xrange [* : *] reverse
+set xrange [* : *] reverse
 set xtics rotate by -90
 
 set term svg size 2000,600
